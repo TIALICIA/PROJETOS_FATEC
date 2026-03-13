@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",                          /* [cite: 35] */
+    "module": "NodeNext",                     
+    "moduleResolution": "node",           /* [cite: 36] */
+    "outDir": "./dist",                       /* [cite: 37] */
+    "rootDir": "./src",                       /* [cite: 38] */
+    "esModuleInterop": true,                  /* [cite: 39] */
+    "strict": true,                           /* [cite: 40] */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
