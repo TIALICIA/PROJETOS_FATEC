@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp - Fatec</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Consulta do Clima</h1>
+            <p>Atividade 4 - Desenvolvimento Web III</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Digite o nome da cidade...">
+                <button id="btnSearch">Buscar</button>
+            </div>
+
+            <div id="weatherResult" class="result-container hidden">
+                <h2 id="cityName"></h2>
+                <div class="weather-info">
+                    <img id="weatherIcon" src="" alt="Ícone do tempo">
+                    <p id="temperature" class="temp-main"></p>
+                </div>
+                <div class="details">
+                    <p><strong>Sensação:</strong> <span id="feelsLike"></span></p>
+                    <p><strong>Umidade:</strong> <span id="humidity"></span></p>
+                    <p><strong>Condição:</strong> <span id="description"></span></p>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="error-msg hidden"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

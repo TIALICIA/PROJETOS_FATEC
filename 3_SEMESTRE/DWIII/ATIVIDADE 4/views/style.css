@@ -1,0 +1,111 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+header h1 {
+    color: #1a73e8;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #5f6368;
+    margin-bottom: 1.5rem;
+}
+
+/* Caixa de Busca */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1a73e8;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
+
+/* Container de Resultados conforme Requisito 2 */
+.result-container {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.temp-main {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #202124;
+    margin: 10px 0;
+}
+
+.details {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.weather-info img {
+    width: 100px;
+}
+
+/* Utilitários */
+.hidden {
+    display: none;
+}
+
+.error-msg {
+    color: #d93025;
+    background-color: #fce8e6;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
