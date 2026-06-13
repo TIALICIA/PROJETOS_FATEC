@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Reservas de Mesa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistema de Reservas de Mesa</h1>
+    <p>Gerencie reservas, visualize mesas e acompanhe disponibilidade.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Nova reserva</h2>
+      <form id="reservation-form">
+        <input name="customerName" placeholder="Nome do cliente" required />
+        <input name="customerContact" placeholder="Contato" required />
+        <input name="tableNumber" type="number" min="1" placeholder="Número da mesa" required />
+        <input name="peopleCount" type="number" min="1" placeholder="Quantidade de pessoas" required />
+        <input name="reservationDate" type="datetime-local" required />
+        <textarea name="observations" placeholder="Observações"></textarea>
+        <button type="submit">Reservar</button>
+      </form>
+      <p id="feedback"></p>
+    </section>
+
+    <section class="card">
+      <h2>Mapa visual das mesas</h2>
+      <div class="legend">
+        <span><b class="dot available"></b>Disponível</span>
+        <span><b class="dot reserved"></b>Reservado</span>
+        <span><b class="dot occupied"></b>Ocupado</span>
+      </div>
+      <div id="table-map" class="table-map"></div>
+      <div id="table-details" class="details"></div>
+    </section>
+
+    <section class="card full">
+      <h2>Reservas</h2>
+      <div class="filters">
+        <input id="filter-client" placeholder="Filtrar por cliente" />
+        <input id="filter-table" type="number" placeholder="Mesa" />
+        <input id="filter-date" type="date" />
+        <select id="filter-status">
+          <option value="">Todos os status</option>
+          <option value="reservado">Reservado</option>
+          <option value="ocupado">Ocupado</option>
+          <option value="finalizado">Finalizado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+        <button id="filter-button">Filtrar</button>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Contato</th>
+              <th>Mesa</th>
+              <th>Pessoas</th>
+              <th>Data/Hora</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="reservations-list"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
