@@ -1,0 +1,56 @@
+### 1. Cadastrar uma Lead (Sucesso)
+POST http://localhost:3000/leads
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "telefone": "12999999999",
+  "origem": "WhatsApp",
+  "veiculo": "Chevrolet Onix 2023"
+}
+
+### 2. Cadastrar uma Lead (Erro de Origem Inválida - Teste do Factory Method)
+POST http://localhost:3000/leads
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "telefone": "11988888888",
+  "origem": "TikTok",
+  "veiculo": "Fiat Uno"
+}
+
+### 3. Listar Todas as Leads
+GET http://localhost:3000/leads
+
+### 4. Ver Detalhes de uma Lead Específica
+# NOTA: Substitua o ID abaixo pelo ID gerado ao criar a lead no passo 1
+GET http://localhost:3000/leads/84xl01684
+
+### 5. Evoluir Negociação (Avançar Estágio)
+# NOTA: Substitua o ID abaixo pelo ID gerado
+PATCH http://localhost:3000/leads/84xl01684/evoluir
+Content-Type: application/json
+
+{
+  "estagio": "Enviou proposta",
+  "status": "Em negociação"
+}
+
+### 6. Finalizar Venda (Mudar para Estado Finalizado)
+PATCH http://localhost:3000/leads/84xl01684/evoluir
+Content-Type: application/json
+
+{
+  "estagio": "Aguardando pagamento",
+  "status": "Finalizado com venda"
+}
+
+### 7. Tentar Avançar Após Finalizada (Teste do Padrão State - Deve dar Erro)
+PATCH http://localhost:3000/leads/84xl01684/evoluir
+Content-Type: application/json
+
+{
+  "estagio": "Contato inicial",
+  "status": "Aberto"
+}
