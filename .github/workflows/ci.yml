@@ -45,7 +45,7 @@ jobs:
       # 2. Análise estática de código
       - name: Análise Estática (ESLint)
         run: |
-          npm install --no-save typescript-eslint
+          npm install --no-save --legacy-peer-deps typescript-eslint
           npm run lint
 
       # 3. Análise de formatação
