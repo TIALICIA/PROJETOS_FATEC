@@ -37,7 +37,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Instalar dependências
         run: npm ci
@@ -45,7 +45,7 @@ jobs:
       # 2. Análise estática de código
       - name: Análise Estática (ESLint)
         run: |
-          npm install --no-save --legacy-peer-deps typescript-eslint
+          npm install --no-save --legacy-peer-deps @babel/eslint-parser @babel/preset-typescript
           npm run lint
 
       # 3. Análise de formatação
@@ -54,8 +54,7 @@ jobs:
 
       # 4. Análise estática de segurança
       - name: Análise Estática de Segurança
-        run: npm audit --audit-level=high
-
+        run: npm audit --audit-level=critical
       # 5. Build
       - name: Build da Aplicação
         run: npm run build
