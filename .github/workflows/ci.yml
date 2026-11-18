@@ -44,7 +44,9 @@ jobs:
 
       # 2. Análise estática de código
       - name: Análise Estática (ESLint)
-        run: npm run lint
+        run: |
+          npm install --no-save typescript-eslint
+          npm run lint
 
       # 3. Análise de formatação
       - name: Análise de Formatação (Prettier)
