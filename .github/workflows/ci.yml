@@ -1,6 +1,5 @@
 name: CI - Implementação do CI (4º Semestre)
 
-# 1. Gatilho PR
 on:
   pull_request:
     branches: [ main, master ]
@@ -9,7 +8,6 @@ jobs:
   ci-pipeline:
     runs-on: ubuntu-latest
 
-    # Sobe o banco PostgreSQL temporário para os testes de integração
     services:
       postgres:
         image: postgres:15-alpine
@@ -25,7 +23,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-    # Aponta para a pasta exata onde estão o package.json e o Dockerfile
     defaults:
       run:
         working-directory: './4_SEMESTRE/Integração_e_Entrega_Continua/Implementação do CI'
@@ -42,11 +39,8 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
-      # 2. Análise estática de código
       - name: Análise Estática (ESLint)
-        run: |
-          npm install --no-save --legacy-peer-deps @babel/eslint-parser @babel/preset-typescript
-          npm run lint
+        run: npm run lint
 
       # 3. Análise de formatação
       - name: Análise de Formatação (Prettier)
